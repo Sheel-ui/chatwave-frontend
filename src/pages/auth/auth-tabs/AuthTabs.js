@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { Login, Register } from '../index';
-import './AuthTabs.scss';
+import { Login, Register } from '@pages/auth/index';
+import '@pages/auth/auth-tabs/AuthTabs.scss';
 
 const AuthTabs = () => {
   const [type, setType] = useState('Sign In');
