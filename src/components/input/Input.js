@@ -4,11 +4,6 @@ import '@components/input/Input.scss';
 const Input = ({ id, name, type, value, className, labelText, placeholder, handleChange, style }) => {
   return (
     <div className="form-row">
-      {labelText && (
-        <label htmlFor={name} className="form-label">
-          {labelText}
-        </label>
-      )}
       <input
         id={id}
         name={name}

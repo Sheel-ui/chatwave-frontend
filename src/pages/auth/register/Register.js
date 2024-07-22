@@ -1,6 +1,6 @@
 import Input from '@components/input/Input';
 import Button from '@components/button/Button';
-import '@pages/auth/register/Register.scss';
+import '@pages/auth/login/Login.scss';
 import { useState, useEffect } from 'react';
 import { Utils } from '@services/utils/utils.service';
 import { authService } from '@services/api/auth/auth.service';
@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import useLocalStorage from '@hooks/useLocalStorage';
 import useSessionStorage from '@hooks/useSessionStorage';
 import { useDispatch } from 'react-redux';
+import OAuth from '@components/oauth/OAuth';
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -63,6 +64,9 @@ const Register = () => {
       )}
       <form className="auth-form" onSubmit={registerUser}>
         <div className="form-input-container">
+          <p className="heading">Sign up.</p>
+          <OAuth></OAuth>
+          <br />
           <Input
             id="username"
             name="username"

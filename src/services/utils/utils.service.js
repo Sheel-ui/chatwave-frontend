@@ -40,4 +40,24 @@ export class Utils {
     deleteSessionPageReload();
     setLoggedIn(false);
   }
+
+  static appEnvironment() {
+    const env = process.env.REACT_APP_ENVIRONMENT;
+    if (env === 'develop') {
+      return 'DEV';
+    } else if (env === 'stage') {
+      return 'STG';
+    }
+  }
+
+  static mapSettingsDropdownItems(setSettings) {
+    const items = [];
+    const item = {
+      topText: 'My Profile',
+      subText: 'View personal profile.'
+    };
+    items.push(item);
+    setSettings(items);
+    return items;
+  }
 }
