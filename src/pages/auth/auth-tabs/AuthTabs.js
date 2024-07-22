@@ -1,25 +1,36 @@
-import { useState } from 'react';
-import { Login, Register } from '@pages/auth/index';
+import { useEffect, useState } from 'react';
 import '@pages/auth/auth-tabs/AuthTabs.scss';
+import Login from '@pages/auth/login/Login';
+import Register from '@pages/auth/register/Register';
+import useLocalStorage from '@hooks/useLocalStorage';
+import { Link, useNavigate } from 'react-router-dom';
+import { Utils } from '@services/utils/utils.service';
 
 const AuthTabs = () => {
   const [type, setType] = useState('Sign In');
+  const keepLoggedIn = useLocalStorage('keepLoggedIn', 'get');
+  const [environment, setEnvironment] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const env = Utils.appEnvironment();
+    setEnvironment(env);
+    if (keepLoggedIn) navigate('/app/social/streams');
+  }, [keepLoggedIn, navigate]);
+
+  const toggleType = () => {
+    setType((prevType) => (prevType === 'Sign In' ? 'Sign Up' : 'Sign In'));
+  };
 
   return (
     <>
       <div className="container-wrapper">
-        <div className="environment">DEV</div>
+        <div className="environment">{environment}</div>
+        <figure className="circle1"></figure>
+        <figure className="circle2"></figure>
         <div className="container-wrapper-auth">
           <div className="tabs">
             <div className="tabs-auth">
-              <ul className="tab-group">
-                <li className={`tab ${type === 'Sign In' ? 'active' : ''}`} onClick={() => setType('Sign In')}>
-                  <button className="login">Sign In</button>
-                </li>
-                <li className={`tab ${type === 'Sign Up' ? 'active' : ''}`} onClick={() => setType('Sign Up')}>
-                  <button className="signup">Sign Up</button>
-                </li>
-              </ul>
               {type === 'Sign In' && (
                 <div className="tab-item">
                   <Login />
@@ -30,6 +41,20 @@ const AuthTabs = () => {
                   <Register />
                 </div>
               )}
+              <div onClick={toggleType} className="under-links">
+                {type === 'Sign In' ? (
+                  <span className="signup">
+                    don&apos;t have an account? <b>Create an account</b>
+                  </span>
+                ) : (
+                  <span className="login">
+                    already have an account? <b>Sign in</b>
+                  </span>
+                )}
+                <Link to={'/forgot-password'}>
+                  <span className="forgot-password">Forgot password?</span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

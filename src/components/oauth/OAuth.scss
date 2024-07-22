@@ -1,0 +1,36 @@
+.oAuth {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .auth-item {
+    border: solid 2px var(--dark-4);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  span {
+    padding: 0px 10px;
+  }
+
+  .divider{
+    position: relative;
+    height: 20px;
+    .line{
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--dark-4);
+      height: 1px;
+    }
+    .seperator{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0px 20px;
+      background-color: var(--dark-8);
+    }
+  }
+}

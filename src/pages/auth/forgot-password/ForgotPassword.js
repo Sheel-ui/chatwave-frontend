@@ -37,14 +37,9 @@ const ForgotPassword = () => {
       <div className="container-wrapper-auth">
         <div className="tabs forgot-password-tabs" style={{ height: `${responseMessage ? '300px' : ''}` }}>
           <div className="tabs-auth">
-            <ul className="tab-group">
-              <li className="tab">
-                <div className="login forgot-password">Forgot Password</div>
-              </li>
-            </ul>
-
             <div className="tab-item">
               <div className="auth-inner">
+                <p className="heading">Reset Password</p>
                 {responseMessage && (
                   <div className={`alerts ${alertType}`} role="alert">
                     {responseMessage}
