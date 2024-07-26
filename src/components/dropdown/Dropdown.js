@@ -1,7 +1,7 @@
 import Avatar from '@components/avatar/Avatar';
 import Button from '@components/button/Button';
 import PropTypes from 'prop-types';
-import { FaCircle, FaRegCircle, FaTrashAlt, FaUserAlt } from 'react-icons/fa';
+import { FaCircle, FaRegCircle, FaUserAlt } from 'react-icons/fa';
 
 import '@components/dropdown/Dropdown.scss';
 
@@ -65,7 +65,7 @@ const Dropdown = ({
                   </div>
                   {title === 'Notifications' && (
                     <div className="content-icons">
-                      <FaTrashAlt className="trash" onClick={() => onDeleteNotification(item?._id)} />
+                      {/* <FaRegTrashAlt className="trash" onClick={() => onDeleteNotification(item?._id)} /> */}
                       {item?.read ? <FaRegCircle className="circle" /> : <FaCircle className="circle" />}
                     </div>
                   )}
