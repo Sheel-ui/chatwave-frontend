@@ -67,7 +67,7 @@ p {
   max-width: 1152px;
   margin: auto;
   height: 40px;
-  background-color: var(--white-1);
+  background-color: var(--dark-8);
   margin-top: 20px;
   margin-bottom: 20px;
   font-weight: bold;
@@ -76,6 +76,7 @@ p {
   align-items: center;
   padding-left: 10px;
   border-radius: 5px;
+  color: var(--white-1);
 }
 
 .empty-page {

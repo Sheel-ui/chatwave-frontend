@@ -14,7 +14,6 @@
     border: none;
 
     .social-bg-primary {
-      background-color: var(--accent-2);
       padding: 5px 10px;
       height: 40px;
 
@@ -32,7 +31,7 @@
           color: var(--gray-3);
           background-color: var(--white-7);
           padding: 3px 8px;
-          border-radius: 5px;
+          border-radius: 1000px;
         }
       }
     }
@@ -47,7 +46,7 @@
         .social-sub-card {
           padding: 5px 15px;
           margin-top: 3px;
-          border-bottom: 1px solid var(--dark-4);
+          border-top: 1px solid var(--dark-4);
           display: grid;
           grid-template-areas: "avatar body icon";
           grid-template-columns: max-content 1fr max-content;
@@ -98,24 +97,28 @@
             grid-area: icon;
             display: flex;
             flex-direction: column;
-            align-self: center;
+            align-self:first baseline;
 
             .trash {
               font-size: 14px;
-              color: var(--red-3);
+              color: var(--red-4);
             }
 
             .circle {
               margin: auto;
               margin-top: 6px;
-              font-size: 10px;
-              color: var(--accent-2);
+              font-size: 8px;
+              color: var(--primary-2);
             }
           }
 
           &:hover {
             background-color: var(--dark-5);
           }
+        }
+
+        .social-sub-card:first-child {
+          border-top: 0px solid var(--dark-4);
         }
       }
 
