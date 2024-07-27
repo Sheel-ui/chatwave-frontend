@@ -7,8 +7,15 @@ import { feelingsList, privacyList } from '@services/utils/static.data';
 import '@components/posts/post/Post.scss';
 import { Utils } from '@services/utils/utils.service';
 import PostCommentSection from '@components/posts/post-comment-section/PostCommentSection';
+import { useSelector } from 'react-redux';
+import ReactionsModal from '@components/posts/reactions/reactions-modal/ReactionsModal';
+import useLocalStorage from '@hooks/useLocalStorage';
+import CommentInputBox from '@components/posts/comments/comment-input/CommentInputBox';
+import CommentsModal from '@components/posts/comments/comments-modal/CommentsModal';
 
 const Post = ({ post, showIcons }) => {
+  const { reactionsModalIsOpen, commentsModalIsOpen } = useSelector((state) => state.modal);
+  const selectedPostId = useLocalStorage('selectedPostId', 'get');
   const getFeeling = (name) => {
     const feeling = find(feelingsList, (data) => data.name === name);
     return feeling?.name;
@@ -21,6 +28,8 @@ const Post = ({ post, showIcons }) => {
 
   return (
     <>
+      {reactionsModalIsOpen && <ReactionsModal />}
+      {commentsModalIsOpen && <CommentsModal />}
       <div className="post-body" data-testid="post">
         <div className="user-post-data">
           <div className="user-post-data-wrap">
@@ -85,10 +94,11 @@ const Post = ({ post, showIcons }) => {
                   <img className="post-image" src={`${post?.gifUrl}`} alt="" />
                 </div>
               )}
-              {(post?.reactions.length > 0 || post?.commentsCount > 0) && <hr />}
+              {post?.reactions.length > 0 || post?.commentsCount > 0}
               <PostCommentSection post={post} />
             </div>
           </div>
+          {selectedPostId === post?._id && <CommentInputBox post={post} />}
         </div>
       </div>
     </>
