@@ -1,9 +1,10 @@
 .post-body {
-  padding: 15px;
+  padding: 20px;
   margin-top: 15px;
   margin-bottom: 25px;
   height: auto;
   border-radius: 16px;
+  border: 1px solid var(--dark-5);
 
   .user-post-data-wrap {
     flex-wrap: wrap;
