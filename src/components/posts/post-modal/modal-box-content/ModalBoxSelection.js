@@ -10,11 +10,11 @@ import { FaImage, FaRegSmile } from 'react-icons/fa';
 import { MdGif } from 'react-icons/md';
 
 const ModalBoxSelection = ({ setSelectedPostImage }) => {
-  const { feelingIsOpen, gifModalIsOpen } = useSelector((state) => state.modal);
+  const { feelingsIsOpen, gifModalIsOpen } = useSelector((state) => state.modal);
   const { post } = useSelector((state) => state.post);
   const feelingsRef = useRef(null);
   const fileInputRef = useRef();
-  const [toggleFeelings, setToggleFeelings] = useDetectOutsideClick(feelingsRef, feelingIsOpen);
+  const [toggleFeelings, setToggleFeelings] = useDetectOutsideClick(feelingsRef, feelingsIsOpen);
   const dispatch = useDispatch();
 
   const fileInputClicked = () => {

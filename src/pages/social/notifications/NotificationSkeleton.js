@@ -12,24 +12,24 @@ const NotificationSkeleton = () => {
               <div className="notification-box-sub-card">
                 <div className="notification-box-sub-card-media">
                   <div className="notification-box-sub-card-media-image-icon">
-                    <Skeleton baseColor="#EFF1F6" circle height={40} width={40} />
+                    <Skeleton baseColor="#565656" circle height={40} width={40} />
                   </div>
                   <div className="notification-box-sub-card-media-body">
                     <h6
                       className="title"
                       style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '5px' }}
                     >
-                      <Skeleton baseColor="#EFF1F6" width={500} height={20} />
+                      <Skeleton baseColor="#565656" width={500} height={20} />
                       <small className="subtitle">
-                        <Skeleton baseColor="#EFF1F6" width={40} className="trash" />
+                        <Skeleton baseColor="#565656" width={40} className="trash" />
                       </small>
                     </h6>
                     <div className="subtitle-body">
                       <small className="subtitle">
-                        <Skeleton baseColor="#EFF1F6" width={40} />
+                        <Skeleton baseColor="#565656" width={40} />
                       </small>
                       <p className="subtext">
-                        <Skeleton baseColor="#EFF1F6" width={100} />
+                        <Skeleton baseColor="#565656" width={100} />
                       </p>
                     </div>
                   </div>
