@@ -1,4 +1,4 @@
-import { floor, random } from 'lodash';
+import { floor, random, some } from 'lodash';
 import { avatarColors } from '@services/utils/static.data';
 import { addUser, clearUser } from '@redux/reducers/user/user.reducer';
 import { addNotification, clearNotification } from '@redux/reducers/notifications/notification.reducer';
@@ -75,6 +75,28 @@ export class Utils {
       version = version.replace(/['"]+/g, '');
       id = id.replace(/['"]+/g, '');
     }
-    return `https://res.cloudinary.com/dyamr9ym3/image/upload/v${version}/${id}`;
+    return `https://res.cloudinary.com/dk4ocfxon/image/upload/v${version}/${id}`;
+  }
+
+  static generateString(length) {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = ' ';
+    const charactersLength = characters.length;
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
+
+  static checkIfUserIsBlocked(blocked, userId) {
+    return some(blocked, (id) => id === userId);
+  }
+
+  static checkIfUserIsFollowed(userFollowers, postCreatorId, userId) {
+    return some(userFollowers, (user) => user._id === postCreatorId || postCreatorId === userId);
+  }
+
+  static getImage(imageId, imageVersion) {
+    return imageId && imageVersion ? this.appImageUrl(imageVersion, imageId) : '';
   }
 }
