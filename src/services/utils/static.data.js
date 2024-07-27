@@ -1,7 +1,7 @@
-import blessed from '@assets/feelings/blessed.jpg';
-import excited from '@assets/feelings/excited.jpg';
-import happy from '@assets/feelings/happy.jpg';
-import loved from '@assets/feelings/loved.jpg';
+import blessed from '@assets/feelings/blessed.png';
+import excited from '@assets/feelings/excited.png';
+import happy from '@assets/feelings/happy.png';
+import loved from '@assets/feelings/loved.png';
 import angry from '@assets/reactions/angry.png';
 import like from '@assets/reactions/like.png';
 import happyReaction from '@assets/reactions/happy.png';
@@ -130,7 +130,7 @@ export const privacyList = [
 ];
 
 export const bgColors = [
-  '#ffffff',
+  '#363636',
   '#f44336',
   '#e91e63',
   '#2196f3',

@@ -1,0 +1,39 @@
+.feelings-container {
+  position: absolute;
+  bottom: 120px;
+  right: calc(50%);
+  background-color: var(--dark-5);
+  border-radius: 6px;
+  transition-duration: 200ms;
+  transition-delay: 0ms;
+  transform-style: flat;
+  transform-origin: 50% 50% 0;
+  transition: all 0.2s linear;
+
+  &-picker {
+
+    &-list {
+      list-style: none;
+      padding: 10px 15px;
+      overflow-y: scroll;
+      height: calc(100% - 44px);
+      cursor: pointer;
+      width: 150px;
+      display: flex;
+      justify-content: space-between;
+
+      &-item {
+        padding: 8px 0;
+        font-size: 0.8rem;
+        display: flex;
+
+        img {
+          width: 20px;
+          height: 20px;
+          // margin-right: 10px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
