@@ -1,5 +1,5 @@
 .modal-reactions-header-tabs {
-  color: #050505;
+  color: var(--white-1);
   font-size: 1.25rem;
   text-overflow: ellipsis;
   font-weight: 700;
@@ -21,8 +21,8 @@
 
     .activeViewAllTab {
       padding-bottom: 16px;
-      border-bottom: 2px solid var(--primary-1);
-      color: var(--primary-1);
+      border-bottom: 2px solid var(--white-1);
+      color: var(--white-1);
       font-weight: bolder;
     }
 

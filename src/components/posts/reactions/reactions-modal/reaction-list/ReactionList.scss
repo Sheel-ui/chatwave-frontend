@@ -8,6 +8,7 @@
     grid-template-columns: 50px auto 1fr 100px;
     grid-template-rows: 1fr;
     margin-bottom: 20px;
+    color: var(--white-1);
 
     .img {
       grid-area: img;
@@ -27,6 +28,7 @@
       grid-area: name;
       padding-left: 16px;
       font-weight: bolder;
+      font-size: 14px;
       margin: auto;
     }
   }
