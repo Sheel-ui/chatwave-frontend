@@ -120,6 +120,10 @@ export class Utils {
     return postReactions;
   }
 
+  static checkIfUserIsOnline(username, onlineUsers) {
+    return some(onlineUsers, (user) => user === username?.toLowerCase());
+  }
+
   static shortenLargeNumbers(data) {
     if (data === undefined) {
       return 0;
