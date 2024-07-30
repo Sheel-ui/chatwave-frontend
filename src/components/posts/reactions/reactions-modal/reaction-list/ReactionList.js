@@ -15,7 +15,7 @@ const ReactionList = ({ postReactions }) => {
               name={reaction?.username}
               bgColor={reaction?.avatarColor}
               textColor="#ffffff"
-              size={50}
+              size={40}
               avatarSrc={reaction?.profilePicture}
             />
             <img src={`${reactionsMap[reaction?.type]}`} alt="" className="reaction-icon" />
