@@ -72,6 +72,11 @@ class PostService {
     const response = await axios.delete(`/post/${postId}`);
     return response;
   }
+
+  async getPostsWithImages(page) {
+    const response = await axios.get(`/post/images/${page}`);
+    return response;
+  }
 }
 
 export const postService = new PostService();
