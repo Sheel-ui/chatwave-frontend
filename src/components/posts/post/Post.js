@@ -87,7 +87,7 @@ const Post = ({ post, showIcons }) => {
               <Avatar
                 name={post?.username}
                 bgColor={post?.avatarColor}
-                textColor="#ffffff"
+                textColor="#181c1c"
                 size={40}
                 avatarSrc={post?.profilePicture}
               />
@@ -118,12 +118,12 @@ const Post = ({ post, showIcons }) => {
               )}
             </div>
             <div className="user-post">
-              {post?.post && post?.bgColor === '#ffffff' && (
+              {post?.post && post?.bgColor === '#181c1c' && (
                 <p className="post" data-testid="user-post">
                   {post?.post}
                 </p>
               )}
-              {post?.post && post?.bgColor !== '#ffffff' && (
+              {post?.post && post?.bgColor !== '#181c1c' && (
                 <div
                   data-testid="user-post-with-bg"
                   className="user-post-with-bg"
@@ -132,8 +132,7 @@ const Post = ({ post, showIcons }) => {
                   {post?.post}
                 </div>
               )}
-
-              {post?.imgId && !post?.gifUrl && post.bgColor === '#ffffff' && (
+              {post?.imgId && !post?.gifUrl && post.bgColor === '#181c1c' && (
                 <div
                   data-testid="post-image"
                   className="image-display-flex"
@@ -146,7 +145,7 @@ const Post = ({ post, showIcons }) => {
                 </div>
               )}
 
-              {post?.gifUrl && post.bgColor === '#ffffff' && (
+              {post?.gifUrl && post.bgColor === '#181c1c' && (
                 <div
                   className="image-display-flex"
                   onClick={() => {
