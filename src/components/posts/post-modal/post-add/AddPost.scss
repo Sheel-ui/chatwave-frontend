@@ -247,6 +247,7 @@
     font-size: 18px;
     border: none;
     outline: none;
+    color: var(--white-1);
   }
 
   .image-display {
@@ -281,7 +282,8 @@
 
   .post-input:empty::before {
     content: attr(data-placeholder);
-    color: var(--white-1);
+    color: var(--gray-1);
+    font-size: 16px;
   }
 }
 

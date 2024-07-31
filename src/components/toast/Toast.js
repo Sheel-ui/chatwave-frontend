@@ -5,6 +5,7 @@ import { cloneDeep } from 'lodash';
 import '@components/toast/Toast.scss';
 import { Utils } from '@services/utils/utils.service';
 import { useDispatch } from 'react-redux';
+import { IoMdClose } from 'react-icons/io';
 
 const Toast = (props) => {
   const { toastList, position, autoDelete, autoDeleteTime = 2000 } = props;
@@ -39,15 +40,15 @@ const Toast = (props) => {
 
   return (
     <div className={`toast-notification-container ${position}`}>
-      {list.map((toast, index) => (
+      {list.map((toast) => (
         <div
           data-testid="toast-notification"
-          key={index}
+          key={Utils.generateString(10)}
           className={`toast-notification toast ${position}`}
           style={{ backgroundColor: toast.backgroundColor }}
         >
           <button className="cancel-button" onClick={() => deleteToast()}>
-            X
+            <IoMdClose />
           </button>
           <div className={`toast-notification-image ${toast.description.length <= 73 ? 'toast-icon' : ''}`}>
             <img src={toast.icon} alt="" />
