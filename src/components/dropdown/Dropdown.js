@@ -2,6 +2,7 @@ import Avatar from '@components/avatar/Avatar';
 import Button from '@components/button/Button';
 import PropTypes from 'prop-types';
 import { FaCircle, FaRegCircle, FaUserAlt } from 'react-icons/fa';
+import { Utils } from '@services/utils/utils.service';
 
 import '@components/dropdown/Dropdown.scss';
 
@@ -35,8 +36,8 @@ const Dropdown = ({
               className="social-card-body-info-container"
               style={{ maxHeight: `${height}px` }}
             >
-              {data.map((item, index) => (
-                <div className="social-sub-card" key={index}>
+              {data.map((item) => (
+                <div className="social-sub-card" key={Utils.generateString(10)}>
                   <div className="content-avatar">
                     {title === 'Notifications' ? (
                       <Avatar

@@ -1,4 +1,4 @@
-import { floor, random, some } from 'lodash';
+import { floor, random, some, findIndex } from 'lodash';
 import { avatarColors } from '@services/utils/static.data';
 import { addUser, clearUser } from '@redux/reducers/user/user.reducer';
 import { addNotification, clearNotification } from '@redux/reducers/notifications/notification.reducer';
@@ -130,5 +130,11 @@ export class Utils {
     } else {
       return millify(data);
     }
+  }
+
+  static removeUserFromList(list, userId) {
+    const index = findIndex(list, (id) => id === userId);
+    list.splice(index, 1);
+    return list;
   }
 }

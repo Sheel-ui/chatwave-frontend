@@ -85,11 +85,11 @@ const Notification = () => {
         <div className="notifications">Notifications</div>
         {notifications.length > 0 && (
           <div className="notifications-box">
-            {notifications.map((notification, index) => (
+            {notifications.map((notification) => (
               <div
                 className="notification-box"
                 data-testid="notification-box"
-                key={index}
+                key={notification?._id}
                 onClick={() => markAsRead(notification)}
               >
                 <div style={{ display: 'flex', alignItems: 'center' }}>
