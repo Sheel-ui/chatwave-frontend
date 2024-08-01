@@ -33,7 +33,7 @@
             font-weight: 700;
             line-height: 16px;
             white-space: nowrap;
-            color: var(--gray-3);
+            color: var(--white-1);
             background-color: var(--white-7);
             padding: 3px 8px;
             border-radius: 5px;
@@ -52,7 +52,7 @@
           .message-sub-card {
             padding: 10px 15px;
             margin-top: 3px;
-            border-bottom: 1px solid var(--white-4);
+            border-bottom: 1px solid var(--dark-4);
             display: grid;
             grid-template-areas: "avatar body icon";
             grid-template-columns: max-content 1fr max-content;
@@ -90,12 +90,12 @@
                 line-height: 21px;
                 height: 21px;
                 display: contents;
-                color: var(--black-4);
+                color: var(--white-1);
               }
 
               .subtext {
                 font-size: 12px;
-                color: var(--gray-9);
+                color: var(--gray-1);
               }
             }
 
@@ -127,7 +127,7 @@
             }
 
             &:hover {
-              background-color: var(--white-14);
+              background-color: var(--dark-4);
             }
           }
         }
