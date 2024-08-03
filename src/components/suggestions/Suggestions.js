@@ -62,11 +62,9 @@ const Suggestions = () => {
             </div>
           ))}
         </div>
-        {users.length > 8 && (
-          <div className="view-more" onClick={() => navigate('/app/social/people')}>
-            View More
-          </div>
-        )}
+        <div className="view-more" onClick={() => navigate('/app/social/people')}>
+          View More
+        </div>
       </div>
     </div>
   );

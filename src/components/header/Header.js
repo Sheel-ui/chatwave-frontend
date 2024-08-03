@@ -189,7 +189,7 @@ const Header = () => {
             <div className="header-image" data-testid="header-image" onClick={() => navigate('/app/social/streams')}>
               <img src={logo} className="img-fluid" alt="" />
               <div className="app-name">
-                Chatty
+                Chatwave
                 {environment && (
                   <span className="environment" style={{ backgroundColor: `${backgrounColor}` }}>
                     {environment}

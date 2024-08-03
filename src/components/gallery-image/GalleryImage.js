@@ -1,7 +1,7 @@
 import Avatar from '@components/avatar/Avatar';
 import { timeAgo } from '@services/utils/timeago.utils';
 import PropTypes from 'prop-types';
-import { FaTrash } from 'react-icons/fa';
+import { FaRegTrashAlt } from 'react-icons/fa';
 import '@components/gallery-image/GalleryImage.scss';
 
 const GalleryImage = ({ post, showCaption, showDelete, imgSrc, onClick, onRemoveImage }) => {
@@ -12,7 +12,7 @@ const GalleryImage = ({ post, showCaption, showDelete, imgSrc, onClick, onRemove
           <img className="gallery-image__media" src={`${imgSrc}`} alt="" />
           {showDelete && (
             <span className="gallery-image__delete" onClick={onRemoveImage}>
-              <FaTrash />
+              <FaRegTrashAlt />
             </span>
           )}
         </div>
